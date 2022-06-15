@@ -25,9 +25,9 @@
         :router="true"
         :collapse="collapse"
         @select="close">
-        <el-menu-item v-for="route in $router.getRoutes()" :index="route.path" :key="route.path" :route="route">
+        <el-menu-item v-for="route in menuRoutes" :index="route.path" :key="route.path" :route="route">
           <el-icon><icon-menu /></el-icon>
-          <template #title>{{ route.name }}</template>
+          <template #title>{{ route.meta.menu.title }}</template>
         </el-menu-item>
       </el-menu>
 
@@ -39,7 +39,9 @@
 </template>
 
 <script setup lang="ts">
+import { reactive, computed } from 'vue'
 import { Menu as IconMenu } from '@element-plus/icons-vue'
+import {useRouter} from "#app";
 
 const props = defineProps(['collapse', 'windowWidth'])
 const emit = defineEmits(['mobileMenuClose'])
@@ -50,6 +52,9 @@ function close() {
   }
 }
 
+const menuRoutes = computed(() => {
+  return  useRouter().getRoutes().filter((r) => r.meta.menu) //$router.getRoutes()
+})
 
 </script>
 

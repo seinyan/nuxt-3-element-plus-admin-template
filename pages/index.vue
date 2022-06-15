@@ -2,24 +2,20 @@
   <div>
     index page
 
-    <el-button>1111</el-button>
-
-    <pre>{{$router.getRoutes()}}</pre>
     <pre>{{$route}}</pre>
+    <pre>{{$router.getRoutes()}}</pre>
+
 
   </div>
 </template>
 
-<script>
-
-export default {
-  name: "index",
-  components: {},
-  data() {
-    return {}
-  },
-  methods: {}
-}
+<script setup lang="ts">
+definePageMeta({
+  menu: {
+    title: 'Index page',
+    icon: ''
+  }
+})
 </script>
 
 <style>

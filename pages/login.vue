@@ -1,17 +1,15 @@
 <template>
   <div>
     <h1>test</h1>
+    <pre>{{$route}}</pre>
+
   </div>
 </template>
 
 <script setup>
-definePageMeta({
-  menu: {
-    title: 'Test page',
-    icon: ''
-  }
-})
+
 </script>
+
 
 <style scoped>
 
