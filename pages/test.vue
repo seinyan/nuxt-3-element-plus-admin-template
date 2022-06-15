@@ -8,7 +8,7 @@
 definePageMeta({
   menu: {
     title: 'Test page',
-    icon: ''
+    icon: 'fa-solid fa-house-user'
   }
 })
 </script>

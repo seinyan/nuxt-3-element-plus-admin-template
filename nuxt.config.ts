@@ -22,7 +22,8 @@ export default defineNuxtConfig({
 
   },
   css: [
-    '~/assets/styles/dashboard.scss'
+    '~/assets/styles/fontawesome/css/all.min.css',
+    '~/assets/styles/index.scss',
   ],
 
   // router: {

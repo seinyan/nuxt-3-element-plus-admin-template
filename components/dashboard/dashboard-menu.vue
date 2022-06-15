@@ -26,7 +26,7 @@
         :collapse="collapse"
         @select="close">
         <el-menu-item v-for="route in menuRoutes" :index="route.path" :key="route.path" :route="route">
-          <el-icon><icon-menu /></el-icon>
+          <i :class="route.meta.menu.icon" style="margin-right: 5px;font-size: 18px"></i>
           <template #title>{{ route.meta.menu.title }}</template>
         </el-menu-item>
       </el-menu>
@@ -40,7 +40,6 @@
 
 <script setup lang="ts">
 import { reactive, computed } from 'vue'
-import { Menu as IconMenu } from '@element-plus/icons-vue'
 import {useRouter} from "#app";
 
 const props = defineProps(['collapse', 'windowWidth'])

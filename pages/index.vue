@@ -2,6 +2,13 @@
   <div>
     index page
 
+    <i class="fa-solid fa-address-book"></i>
+    <i class="fa-solid fa-address-book"></i>
+    <i class="fa-solid fa-address-book"></i>
+    <i class="fa-solid fa-address-book"></i>
+    <i class="fa-solid fa-address-book"></i>
+    <i class="fa-solid fa-address-book"></i>
+
     <pre>{{$route}}</pre>
     <pre>{{$router.getRoutes()}}</pre>
 
@@ -13,7 +20,7 @@
 definePageMeta({
   menu: {
     title: 'Index page',
-    icon: ''
+    icon: 'fa-solid fa-circle'
   }
 })
 </script>
