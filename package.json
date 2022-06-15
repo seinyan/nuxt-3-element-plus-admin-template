@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "nuxt": "3.0.0-rc.3",
+    "sass": "^1.52.2"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.0.5",
+    "@fortawesome/vue-fontawesome": "^3.0.0",
+    "element-plus": "^2.2.5",
+    "path-to-regexp": "^6.2.1"
+  }
+}
