@@ -1,12 +1,16 @@
 <template>
   <div>
-    <h1 class="layout-auth-title">Авторизация</h1>
+    <h1 class="layout-auth-title">Регистрация</h1>
 
     <p v-show="error" class="layout-auth-error-msg">
-      Неправильный логин или пароль!
+      Пользователь существует!
+    </p>
+    <p v-show="successRegister" class="layout-auth-success-msg">
+      Спасибо за регистрацию!
     </p>
 
     <el-form
+      v-if="!successRegister"
       label-position="top"
       ref="ruleFormRef"
       :model="form"
@@ -24,14 +28,14 @@
       </el-form-item>
       <el-form-item>
         <div class="flex-center-row w-100">
-          <el-button type="primary" :disabled="!form.agree" @click="submitForm">Войти</el-button>
+          <el-button type="primary" @click="submitForm">Регистрация</el-button>
         </div>
       </el-form-item>
     </el-form>
 
     <div class="layout-auth-footer-links">
+      <NuxtLink :to="{ name: 'login' }">Войти</NuxtLink>
       <NuxtLink :to="{ name: 'restore' }">Забыли пароль?</NuxtLink>
-      <NuxtLink :to="{ name: 'register' }">Регистрация</NuxtLink>
     </div>
 
   </div>
@@ -45,10 +49,11 @@ import {useRouter} from "#app";
 import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { emailRule, required, useValidateForm } from "~/utils/element.utils";
-import {Login, AuthForm} from "~/composables/auth.api";
+import { AuthForm, Register } from "~/composables/auth.api";
 
 const ruleFormRef = ref<FormInstance>()
 const error = ref<boolean>(false)
+const successRegister = ref<boolean>(false)
 const form: AuthForm = reactive<AuthForm>(new AuthForm())
 
 const rules = reactive<FormRules>({
@@ -58,10 +63,12 @@ const rules = reactive<FormRules>({
 
 const submitForm = async () => {
   if (await useValidateForm(ruleFormRef.value)) {
-    const res = await Login(form)
-    error.value = !res
-    if (res) {
-      return await useRouter().push({name: 'index'})
+    successRegister.value = await Register(form)
+    error.value = !successRegister.value
+    if (successRegister.value) {
+      setTimeout(async () => {
+        await useRouter().push({name: 'index'})
+      }, 2000)
     }
   }
 }

@@ -1,5 +1,6 @@
 import {defineNuxtConfig} from 'nuxt'
 
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: false,
@@ -17,7 +18,6 @@ export default defineNuxtConfig({
     ],
     link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}],
   },
-
   head: {
 
   },
@@ -25,8 +25,7 @@ export default defineNuxtConfig({
     '~/assets/styles/fontawesome/css/all.min.css',
     '~/assets/styles/index.scss',
   ],
-
-  // router: {
-  //   middleware: ['auth']
-  // }
+  router: {
+    middleware: ['auth']
+  },
 })

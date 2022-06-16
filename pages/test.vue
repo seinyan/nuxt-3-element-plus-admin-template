@@ -1,18 +1,18 @@
 <template>
   <div>
-    <h1>test</h1>
+   <h1>test</h1>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 definePageMeta({
   menu: {
     title: 'Test page',
-    icon: 'fa-solid fa-house-user'
+    icon: 'fa-solid fa-circle'
   }
 })
 </script>
 
-<style scoped>
+<style lang="scss">
 
 </style>

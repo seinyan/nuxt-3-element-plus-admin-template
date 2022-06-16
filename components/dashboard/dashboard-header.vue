@@ -13,12 +13,26 @@
         </el-icon>
       </div>
       <div class="dashboard-header-right-block-item">
-        <el-badge :value="200" :max="99" class="item">
-          <i class="fa-solid fa-bell"></i>
-        </el-badge>
+        <el-dropdown>
+          <el-badge style="cursor: pointer" :value="200" :max="99" class="item">
+            <i class="fa-solid fa-bell"></i>
+          </el-badge>
+          <template #dropdown>
+            <div style="width: 200px;padding: 8px;text-align: center">
+              ----
+            </div>
+          </template>
+        </el-dropdown>
       </div>
       <div class="dashboard-header-right-block-item">
-        <el-avatar :size="40"/>
+        <el-dropdown>
+          <el-avatar :size="40" style="cursor: pointer"/>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item @click="Logout">Logout</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
       </div>
 
     </div>
@@ -27,6 +41,7 @@
 
 <script setup lang="ts">
 import {toggleDark} from "~/composables/dark";
+import {Logout} from "~/composables/auth.api";
 
 const props = defineProps(['collapse'])
 const emit = defineEmits(['collapseMenu'])

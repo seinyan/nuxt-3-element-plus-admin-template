@@ -1,10 +1,11 @@
 @import "variables";
 
 $dashboard-header-height: 60px;
-$dashboard-header-background: #99a9bf;
 $dashboard-border-color: var(--el-color-primary-light-8);
-$dashboard-menu-background: #304156;
+$dashboard-menu-background: #131144;
+$dashboard-menu--logo-border-color: #1d3043;
 $dashboard-menu-width: 250px;
+
 
 /** global **/
 body {
@@ -24,12 +25,13 @@ body {
 
 .dashboard-header {
   //width: 100%;
+  box-shadow: 0 2px 4px rgba(0,21,41,.08);
+  border-bottom: 1px solid $dashboard-border-color;
   height: $dashboard-header-height;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  border-bottom: 1px solid $dashboard-border-color;
   .dashboard-header-right-block {
     display: flex;
     align-items: center;
@@ -63,7 +65,6 @@ body {
 .dashboard-footer-block {
   width: $dashboard-menu-width;
   height: calc(#{$dashboard-header-height} - 20px)!important;
-  //border-top: 1px solid $dashboard-border-color;
   text-align: center;
   line-height: calc(#{$dashboard-header-height} - 20px);
 }
@@ -81,8 +82,7 @@ body {
 }
 
 .menu-logo {
-  //background: $dashboard-menu-background;
-  border-bottom: 1px solid $dashboard-border-color;
+  border-bottom: 1px solid $dashboard-menu--logo-border-color;
   height: 60px;
   padding: 0 12px;
   display: flex;

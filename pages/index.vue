@@ -1,18 +1,6 @@
 <template>
   <div>
-    index page
-
-    <i class="fa-solid fa-address-book"></i>
-    <i class="fa-solid fa-address-book"></i>
-    <i class="fa-solid fa-address-book"></i>
-    <i class="fa-solid fa-address-book"></i>
-    <i class="fa-solid fa-address-book"></i>
-    <i class="fa-solid fa-address-book"></i>
-
-    <pre>{{$route}}</pre>
-    <pre>{{$router.getRoutes()}}</pre>
-
-
+    <conference/>
   </div>
 </template>
 
@@ -25,6 +13,6 @@ definePageMeta({
 })
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

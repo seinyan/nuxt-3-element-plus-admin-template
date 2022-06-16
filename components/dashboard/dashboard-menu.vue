@@ -17,7 +17,7 @@
       <el-menu
         text-color="#bfcbd9"
         active-text-color="#409EFF"
-        background-color="#304156"
+        background-color="#131144"
         class="dashboard-el-menu"
         :default-active="$route.path"
         :collapse-transition="false"
